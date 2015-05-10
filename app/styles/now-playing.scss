@@ -1,0 +1,62 @@
+.now-playing-wrapper{
+  position: relative;
+  .mascot{
+    background: url('/assets/img/chihaya-maid.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    height: 100vh;
+    width: 500px;
+  }
+  .now-playing-circle{
+    @include flexbox;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 60px;
+    left: 260px;
+    z-index: 2;
+
+    height: 200px;
+    width: 200px;
+    
+    background: rgba(255,255,255,.2);
+
+    border-radius: 200px;
+    border: 3px solid white;
+
+    .now-playing-controls{
+      color: #000e19;
+      font-size: 50px;
+
+      i:hover{
+        color: #ff9ac7;
+      }
+      i.active{
+        color: #ff9ac7;
+      }
+    }
+  }
+  .control-container{
+    @include outer-shadow;
+    @include flexbox;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 130px;
+    left: 300px;
+
+    height: 400px;
+    width: 400px;
+    
+    border-radius: 400px;
+
+    background: rgba(1, 114, 204, .55);
+
+    .now-playing-track-container{
+      color: white;
+    }
+  }
+}

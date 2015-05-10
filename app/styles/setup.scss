@@ -1,0 +1,12 @@
+$site-width: 1200px;
+
+@mixin flexbox{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;   
+}
+
+@mixin outer-shadow{
+  box-shadow: 7px 5px 28px -2px #898989;
+}

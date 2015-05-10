@@ -1,0 +1,16 @@
+<audio id="now-playing" src="http://ein.atran.net:8090/caaradio.ogg" controls></audio>
+<div class="mascot">
+
+</div>
+<div class="now-playing-circle">
+  <div class="now-playing-controls">
+    <i {{bind-attr class=":fa :fa-play :actionable playing:hidden"}} {{action "play"}}></i>
+    <i {{bind-attr class=":fa :fa-pause :actionable playing::hidden"}} {{action "pause"}}></i>
+    <i class="fa fa-stop actionable" {{action "stop"}}></i>
+  </div>
+</div>
+<div class="control-container">
+  <div class="now-playing-track-container">
+    Now playing something probably
+  </div>
+</div>

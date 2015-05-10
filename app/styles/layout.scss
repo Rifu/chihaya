@@ -1,0 +1,23 @@
+body{
+  font-family: 'Open Sans', Arial;
+
+  background: #D3A67B;
+}
+audio{
+  display: none;
+}
+
+.nav-bar{
+  @include flexbox;
+
+  height: 46px;
+
+  line-height: 46px;
+
+  border-bottom: 1px solid 
+}
+
+.container{
+  width: $site-width;
+  margin: 0 auto;
+}
