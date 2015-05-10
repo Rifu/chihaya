@@ -1,7 +1,8 @@
 # Chihaya
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+An Ember.js frontend for [fureon](https://github.com/ATRAN2/fureon).
+
+If you're interested in actually building on this:
 
 ## Prerequisites
 
