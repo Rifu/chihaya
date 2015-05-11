@@ -11,7 +11,7 @@ var NowPlayingComponent = Ember.Component.extend({
 
   didInsertElement: function(){
     this.createPlayer();
-    this.advancePlaylist();
+    this.updatePlaylist();
   },
   createPlayer: function(){ 
     var self = this;
@@ -29,6 +29,7 @@ var NowPlayingComponent = Ember.Component.extend({
   continuePlayback: function(){
     this.playPlayer();
     this.advancePlaylist();
+    this.updatePlaylist();
   },
   playPlayer: function(){
     if(this.get("player")){
@@ -52,7 +53,6 @@ var NowPlayingComponent = Ember.Component.extend({
       lastSong = this.get("playlist").shiftObject();
     }
     this.set("lastSong", lastSong);
-    this.updatePlaylist();
   },
   updatePlaylist: function(){
     var endpoint = this.get("api") + "playlist";
