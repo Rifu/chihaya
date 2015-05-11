@@ -6,6 +6,8 @@ var NowPlayingComponent = Ember.Component.extend({
   playing: false,
   api: "http://radio.weeabros.com/api/",
   playlist: Ember.A(),
+  lastSong: null,
+  currentSong: null,
 
   didInsertElement: function(){
     this.createPlayer();
@@ -26,7 +28,7 @@ var NowPlayingComponent = Ember.Component.extend({
   },
   continuePlayback: function(){
     this.playPlayer();
-    this.updatePlaylist();
+    this.advancePlaylist();
   },
   playPlayer: function(){
     if(this.get("player")){
@@ -44,10 +46,20 @@ var NowPlayingComponent = Ember.Component.extend({
     this.pausePlayer();
     this.set("player", null);
   },
+  advancePlaylist: function(){
+    var lastSong = this.get("playlist").shiftObject();
+    while(lastSong.songId == this.get("lastSong.songId")){
+      lastSong = this.get("playlist").shiftObject();
+    }
+    this.set("lastSong", lastSong);
+    this.updatePlaylist();
+  },
   updatePlaylist: function(){
     var endpoint = this.get("api") + "playlist";
     var store = this.get("store");
     var playlist = this.get("playlist");
+    var self = this;
+    playlist.clear();
 
     $.get(endpoint)
     .done(function(response){
@@ -60,7 +72,10 @@ var NowPlayingComponent = Ember.Component.extend({
           userRequested: songData.userRequested,
         });
         playlist.pushObject(song);
-      })
+        if(k == 0){
+          self.set("currentSong", song)
+        }
+      });
     })
     .fail(function(response){
       //oops.wav

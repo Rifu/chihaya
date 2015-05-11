@@ -11,6 +11,16 @@
 </div>
 <div class="control-container">
   <div class="now-playing-track-container">
-    Now playing something probably
+    <h1>Now playing:</h1>
+    <img {{bind-attr src=currentSong.albumArt}} class="album-art">
+    <h2>{{currentSong.title}}</h2>
+    <p>{{currentSong.artist}}</p>
+  </div>
+</div>
+<div class="current-playlist">
+  <div class="current-playlist-songs">
+    {{#each song in playlist}}
+      {{current-playlist-song song=song store=store}}
+    {{/each}}
   </div>
 </div>

@@ -8,5 +8,18 @@ $site-width: 1200px;
 }
 
 @mixin outer-shadow{
-  box-shadow: 7px 5px 28px -2px #898989;
+  box-shadow: 7px 5px 28px -2px #363636;
+}
+@mixin inner-shadow{
+ box-shadow: inset 0px 0px 12px 0px #363636;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Slabo 27px';
+  font-weight: 300;
+  margin: 0.2em;
+}
+
+p{
+  margin: 0;
 }

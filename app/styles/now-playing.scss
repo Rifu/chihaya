@@ -48,6 +48,8 @@
     top: 130px;
     left: 300px;
 
+    padding: 30px;
+
     height: 400px;
     width: 400px;
     
@@ -56,7 +58,67 @@
     background: rgba(1, 114, 204, .55);
 
     .now-playing-track-container{
+      text-align: center;
       color: white;
     }
+  }
+  .current-playlist{
+    @include inner-shadow;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    
+    width: 350px;
+
+    background: rgba(26,26,26, .55);
+
+    overflow: hidden;
+
+    .current-playlist-songs{
+      overflow: hidden;
+    }
+
+    .spacer-1{
+      position: absolute;
+      bottom: 60px;
+      
+      height: 5px;
+      width: 100%;
+
+      background: #D3A67B;
+    }
+    .spacer-2{
+      position: absolute;
+      bottom: 10px;
+      
+      height: 5px;
+      width: 100%;
+
+      background: #D3A67B;
+    }
+    .playlist_song-wrapper:first-of-type{
+      @include outer-shadow;
+    }
+  }
+}
+.playlist_song-wrapper{
+  @include flexbox;
+  align-items: center;
+
+  height: 50px;
+
+  margin: 5px;
+
+  color: white;
+
+  .album-art{
+    height: 50px;
+    width: 50px;
+  }
+  .song-details{
+    width: 270px;
+    margin-left: 5px;
+    overflow: hidden;
   }
 }
