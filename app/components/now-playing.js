@@ -11,7 +11,7 @@ var NowPlayingComponent = Ember.Component.extend({
 
   didInsertElement: function(){
     this.createPlayer();
-    this.updatePlaylist();
+    this.advancePlaylist();
   },
   createPlayer: function(){ 
     var self = this;
