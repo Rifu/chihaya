@@ -28,7 +28,6 @@ var NowPlayingComponent = Ember.Component.extend({
   },
   continuePlayback: function(){
     this.playPlayer();
-    this.advancePlaylist();
     this.updatePlaylist();
   },
   playPlayer: function(){
@@ -49,9 +48,6 @@ var NowPlayingComponent = Ember.Component.extend({
   },
   advancePlaylist: function(){
     var lastSong = this.get("playlist").shiftObject();
-    while(lastSong.songId == this.get("lastSong.songId")){
-      lastSong = this.get("playlist").shiftObject();
-    }
     this.set("lastSong", lastSong);
   },
   updatePlaylist: function(){
@@ -73,7 +69,7 @@ var NowPlayingComponent = Ember.Component.extend({
         });
         playlist.pushObject(song);
         if(k == 0){
-          self.set("currentSong", song)
+          self.set("currentSong", song);
         }
       });
     })
